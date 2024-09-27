@@ -15,7 +15,7 @@ public:
         ListNode* rhead= res;
         int c=0;
         int a,b;
-        while(l1!=NULL || l2!=NULL){
+        while(l1!=NULL || l2!=NULL || c){
             if(l1!=NULL){
                 a=l1->val;
                 l1=l1->next;}
@@ -25,17 +25,9 @@ public:
                 l2=l2->next;}
             else b=0;
             int ans=a+b+c;
-            c=0;
-            if(ans>9){
-                c=ans/10;
-                ans%=10;
-            } 
+            c=ans/10;
+            ans%=10;
             ListNode* temp=new ListNode(ans);
-            rhead->next=temp;
-            rhead=rhead->next;
-        }
-        if(c!=0){
-            ListNode* temp=new ListNode(c);
             rhead->next=temp;
             rhead=rhead->next;
         }
