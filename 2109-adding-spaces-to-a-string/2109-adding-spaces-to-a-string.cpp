@@ -6,8 +6,7 @@ public:
         for(int i=0;i<s.length();i++){
             if(j<n && i==spaces[j]){
                 res.push_back(' ');
-                i--;
-                j++;}
+                i--;j++;}
             else res.push_back(s[i]);
         }
         return res;
